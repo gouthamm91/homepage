@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Homepage V0.1</title>
+	<style type="text/css">
+		body, html {
+			width: 100%;
+			height: 100%;
+			margin: 0px;
+			padding: 0px;
+			background-color: #303030;
+			font-size: 110%;
+		}
+		input {
+			border:  1px solid gray;
+			border-radius: 20px;
+			background-color: rgba(0, 0, 0, 0.5);
+			color: white;
+			padding: 7px;
+			outline: none;
+			margin: 5px;
+			margin-left: 1px;
+			margin-right: 0px;
+			font-size: 105%;
+		}
+	</style>
+</head>
+<body>
+	<div style="position: relative; top: 25%; padding: 10px;">
+		<div style="text-align: center;">
+			<a style="font-family: sans-serif; font-size: 210%; color: white;">H</a><a style="font-family: sans-serif; font-size: 205%; color: white;">omepage</a>
+			<br><br><input type="search" id="inputbox" style="width: 100%; text-align: center;"/>
+		</div>
+		<div style="text-align: center;">
+			<!-- <a style="color: lightblue;">G</a><a style="color: red;">o</a><a style="color: orange;">o</a><a style="color: lightblue;">g</a><a style="color: lightgreen;">l</a><a style="color: red;">e</a> -->
+			<input type="button" onclick="window.open( 'https://www.google.com/search?q=' + document.getElementById('inputbox').value.replace(/ /g, '+') + '',target='_blank')" value="Google"/>
+			<input type="button" onclick="window.open( 'https://www.google.com/search?q=' + document.getElementById('inputbox').value.replace(/ /g, '+') + '&btnI',target='_blank')" value="feeling lucky"/>
+			<input type="button" onclick="window.open( 'https://www.google.com/search?q=' + document.getElementById('inputbox').value.replace(/ /g, '+') + '&tbm=isch',target='_blank')" value="Images"/>
+			<input type="button" onclick="window.open( 'https://www.google.com/search?q=' + document.getElementById('inputbox').value.replace(/ /g, '+') + '&tbm=vid',target='_blank')" value="Videos"/>
+			<input type="button" onclick="window.open( 'https://www.google.com/maps?q=current+location+to+' + document.getElementById('inputbox').value.replace(/ /g, '+') + '',target='_blank')" value="Map"/>
+			<input type="button" onclick="window.open( 'https://www.youtube.com/results?search_query=' + document.getElementById('inputbox').value.replace(/ /g, '+') + '+videos',target='_blank')" value="YouTube"/>
+		</div>
+		<div style="text-align: center; margin-top: 40px;">
+			<input type="button" onclick="window.open( 'https://www.google.com/search?q=' + 'gmail' + '&btnI',target='_blank')" value="GMail"/>
+			<input type="button" onclick="window.open( 'https://www.instagram.com',target='_blank')" value="Instagram"/>
+			<input type="button" onclick="window.open( 'https://www.facebook.com',target='_blank')" value="Facebook"/>
+			<input type="button" onclick="window.open( 'https://www.linkedin.com',target='_blank')" value="Linkedin"/>
+		</div>
+	</div>
+</body>
+</html>
+
+
+<!-- https://www.google.com/maps?q=current+location+to+guindy
+
+https://www.google.com/maps/dir/12.9045178,80.1903614/Guindy,+Chennai,+Tamil+Nadu/@12.9554571,80.1648818,13z/data=!3m1!4b1!4m18!1m8!3m7!1s0x3a5267709aa40a7d:0xca348695fc512750!2sGuindy,+Chennai,+Tamil+Nadu!3b1!8m2!3d13.0066625!4d80.2206369!16zL20vMDc4Yngy!4m8!1m1!4e1!1m5!1m1!1s0x3a5267709aa40a7d:0xca348695fc512750!2m2!1d80.2206369!2d13.0066625?entry=ttu -->
+
+<!-- https://www.youtube.com/results?search_query=iron+man -->
