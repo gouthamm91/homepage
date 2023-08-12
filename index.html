@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Homepage V0.1</title>
+	<title>Homepage V0.2</title>
 	<style type="text/css">
 		body, html {
 			width: 100%;
@@ -39,7 +39,8 @@
 			<input type="button" onclick="window.open( 'https://www.google.com/search?q=' + document.getElementById('inputbox').value.replace(/ /g, '+') + '&btnI',target='_blank')" value="feeling lucky"/>
 			<input type="button" onclick="window.open( 'https://www.google.com/search?q=' + document.getElementById('inputbox').value.replace(/ /g, '+') + '&tbm=isch',target='_blank')" value="Images"/>
 			<input type="button" onclick="window.open( 'https://www.google.com/search?q=' + document.getElementById('inputbox').value.replace(/ /g, '+') + '&tbm=vid',target='_blank')" value="Videos"/>
-			<input type="button" onclick="window.open( 'https://www.google.com/maps?q=current+location+to+' + document.getElementById('inputbox').value.replace(/ /g, '+') + '',target='_blank')" value="Map"/>
+<!-- 			<input type="button" onclick="window.open( 'https://www.google.com/maps?q=current+location+to+' + document.getElementById('inputbox').value.replace(/ /g, '+') + '',target='_blank')" value="Map"/> -->
+			<input type="button" onclick="window.open( 'https://www.google.com/maps/dir/current+location/' + document.getElementById('inputbox').value.replace(/ /g, '+') + '/',target='_blank')" value="Map"/>
 			<input type="button" onclick="window.open( 'https://www.youtube.com/results?search_query=' + document.getElementById('inputbox').value.replace(/ /g, '+') + '+videos',target='_blank')" value="YouTube"/>
 		</div>
 		<div style="text-align: center; margin-top: 40px;">
