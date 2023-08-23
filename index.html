@@ -63,6 +63,11 @@
 						var url = 'https://www.google.com/maps?q='+q.trim().toLowerCase().replace(/ /g, '+');
 					}
 				}
+
+				if (q.toLowerCase().trim() == "void") {
+					var url = "https://aadhibbc1991.github.io/stars/"
+				}
+
 				if (url == '') {
 					if (q.indexOf('.co') > -1 || q.indexOf('www.') > -1 || q.indexOf('.desi') > -1 || q.indexOf('https://') > -1 || q.indexOf('.tv') > -1 || q.indexOf('.in') > -1 || q.indexOf('.ai') > -1 || q.indexOf('.io') > -1 || q.indexOf('.app') > -1) {
 						var url = 'https://'+q.trim();
