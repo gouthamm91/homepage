@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>🏡 Homepage V0.2</title>
+	<title>🏡 Homepage V1.1</title>
 	<style type="text/css">
 		html, body {
 			height: 98%;
@@ -44,21 +44,24 @@
 		function searchQuery(q) {
 			if (q.trim() != '') {
 				var imageKey = ' images pics pictures wallpapers photos memes gifs drawings arts outlines icons logos posters ';
+				var imageKey = imageKey + ' image pic picture wallpaper photo meme gif drawing art outline icon logo poster ';
 				var videoKey = ' videos tapes dvds recordings trailers scenes bloopers ';
+				var videoKey = videoKey + ' video tape dvd recording trailer scene blooper ';
 				var mapKey = ' maps gps charts directions ';
+				var mapKey = mapKey + ' map gp chart direction ';
 				var qLower = q.toLowerCase().trim().replace(/ of /g, ' ').replace(/ to /g, ' ').replace(/ toward /g, ' ').replace(/ towards /g, ' ');
 				var url = '';
 				for (a=0; a<qLower.split(' ').length; a++) {
 					var word = qLower.split(' ')[a];
-					if (imageKey.indexOf(' '+word) > -1) {
+					if (imageKey.indexOf(' '+word+' ') > -1) {
 						var finalKey = word;
 						var url = 'https://www.google.com/search?q='+q.trim().toLowerCase().replace(/ /g, '+')+'&tbm=isch';
 					}
-					if (videoKey.indexOf(' '+word) > -1) {
+					if (videoKey.indexOf(' '+word+' ') > -1) {
 						var finalKey = word;
 						var url = 'https://www.google.com/search?q='+q.trim().toLowerCase().replace(/ /g, '+')+'&tbm=vid';
 					}
-					if (mapKey.indexOf(' '+word) > -1) {
+					if (mapKey.indexOf(' '+word+' ') > -1) {
 						var finalKey = word;
 						var url = 'https://www.google.com/maps?q='+q.trim().toLowerCase().replace(/ /g, '+');
 					}
