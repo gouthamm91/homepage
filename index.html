@@ -41,14 +41,7 @@
 			font-size: 200%;
 		}
 	</style>
-	<script type="text/javascript" defer>
-		
-		document.getElementById('inputbox').addEventListener("keypress", function (event) {
-   			if (event.keyCode == 13) {
-      				searchQuery(document.getElementById('inputbox').value);
-   			}
-		});
-		
+	<script type="text/javascript">
 		function searchQuery(q) {
 			if (q.trim() != '') {
 				var imageKey = ' images pics pictures wallpapers photos memes gifs drawings arts outlines icons logos posters ';
@@ -108,5 +101,12 @@
 		<img style="" src="https://static.vecteezy.com/system/resources/previews/016/716/465/non_2x/gmail-icon-free-png.png" onclick="window.open('https://mail.google.com/mail/u/0/#inbox', target='_blank')"/>
 		<!-- <img style="width: 30px; height: 30px; border-radius: 50%;" src="" onclick="window.open('https://www..com', target='_blank')"/> -->
 	</div>
+	<script type="text/javascript">
+		document.getElementById('inputbox').addEventListener("keypress", function (event) {
+   			if (event.keyCode == 13) {
+      				searchQuery(document.getElementById('inputbox').value);
+   			}
+		});
+	</script>
 </body>
 </html>
