@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏡</text></svg>">
-	<title>Homepage V1.10</title>
+	<title>Homepage V1.11</title>
 	<style type="text/css">
 		html, body {
 			height: 98%;
@@ -72,12 +72,16 @@
 					var url = "https://aadhibbc1991.github.io/stars/"
 				}
 
-				if (url == '') {
-					if (q.indexOf('.co') > -1 || q.indexOf('www.') > -1 || q.indexOf('.desi') > -1 || q.indexOf('https://') > -1 || q.indexOf('.tv') > -1 || q.indexOf('.in') > -1 || q.indexOf('.ai') > -1 || q.indexOf('.io') > -1 || q.indexOf('.app') > -1) {
-						var url = 'https://'+q.trim();
-						var url = url.replace('https://https://', 'https://')
-					} else {
-						var url = 'https://www.google.com/search?q='+q.trim().toLowerCase().replace(/ /g, '+')+'&btnI';
+				if (q.indexOf(' ') > -1) {
+					var url = 'https://www.google.com/search?q='+q.trim().toLowerCase().replace(/ /g, '+')+'&btnI';
+				} else {
+					if (url == '') {
+						if (q.indexOf('.co') > -1 || q.indexOf('www.') > -1 || q.indexOf('.desi') > -1 || q.indexOf('https://') > -1 || q.indexOf('.tv') > -1 || q.indexOf('.in') > -1 || q.indexOf('.ai') > -1 || q.indexOf('.io') > -1 || q.indexOf('.app') > -1) {
+							var url = 'https://'+q.trim();
+							var url = url.replace('https://https://', 'https://')
+						} else {
+							var url = 'https://www.google.com/search?q='+q.trim().toLowerCase().replace(/ /g, '+')+'&btnI';
+						}
 					}
 				}
 
