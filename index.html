@@ -43,7 +43,8 @@
 		}
 	</style>
 	<script type="text/javascript">
-		function searchQuery(q) {
+		function FormUrl(q) {
+			url = 'https://www.google.com/';
 			if (q.trim() != '') {
 				var imageKey = ' images pics pictures wallpapers photos memes gifs drawings arts outlines icons logos posters ';
 				var imageKey = imageKey + ' image pic picture wallpaper photo meme gif drawing art outline icon logo poster ';
@@ -81,11 +82,15 @@
 						}
 					}
 				}
-
-				window.open(url, target="_blank");
 			}
+			return url
+		}
+		function searchQuery(q) {
+			var url = FormUrl(q);
+			window.open(url, target="_blank");
 			// document.getElementById('inputbox').value = '';
 		}
+
 		function privacyCheckAndDisplay(a) {
 			var ele = document.getElementById(a);
 			document.cookie = 'normal';
@@ -116,12 +121,15 @@
 		<br>
 		<button onclick="window.open('https://bulk-ofs-generation-tool.vercel.app', target='_blank')">T24 OFS Tool</button>
 	</div>
-	<iframe style="width: 100%; height: 400px;" src="https://www.google.com/search?q=iron+man+3+final+battle&igu=1&tbm=vid"></iframe>
+	<iframe id="googlesearchframe" style="width: 100%; height: 400px;" src="https://www.google.com/search?q=iron+man+3+final+battle&igu=1&tbm=vid"></iframe>
 	<script type="text/javascript">
 		document.getElementById('inputbox').addEventListener("keypress", function (event) {
    			if (event.keyCode == 13) {
       				searchQuery(document.getElementById('inputbox').value);
-   			}
+   			} else {
+				var inputString = document.getElementById('search').value;
+				document.getElementById('googlesearchframe').src = FormUrl(inputString);
+			}
 		});
 	</script>
 </body>
