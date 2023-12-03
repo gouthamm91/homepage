@@ -127,7 +127,7 @@
    			if (event.keyCode == 13) {
       				searchQuery(document.getElementById('inputbox').value);
    			} else {
-				var inputString = document.getElementById('search').value;
+				var inputString = document.getElementById('inputbox').value;
 				document.getElementById('googlesearchframe').src = FormUrl(inputString);
 			}
 		});
