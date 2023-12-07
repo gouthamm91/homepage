@@ -87,7 +87,7 @@
 		}
 		function searchQuery(q) {
 			var url = FormUrl(q);
-			window.open(url, target="_blank");
+			window.open(url.replace(/&igu=1/g, '').replace(/igu=1/g, ''), target="_blank");
 			// document.getElementById('inputbox').value = '';
 		}
 
@@ -106,8 +106,8 @@
 <body>
 	<div>
 		<h2><a style="font-size: 150%;">🏡</a><u>Homepage</u></h2>
-<!-- 		<input type="search" onchange="searchQuery(this.value)" id="inputbox"/> -->
-		<input type="search" id="inputbox" onkeyup="document.getElementById('googlesearchframe').src = FormUrl(this.value);"/>
+		<!-- <input type="search" id="inputbox" onkeyup="document.getElementById('googlesearchframe').src = FormUrl(this.value);"/> -->
+		<input type="search" id="inputbox"/>
 		<br>
 		<img style="" src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_youtube-512.png" onclick="window.open('https://www.youtube.com', target='_blank')"/>
 		<img style="" src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png" onclick="window.open('https://www.linkedin.com', target='_blank')"/>
@@ -121,7 +121,7 @@
 		<br>
 		<button onclick="window.open('https://bulk-ofs-generation-tool.vercel.app', target='_blank')">T24 OFS Tool</button>
 	</div>
-	<iframe id="googlesearchframe" style="width: 100%; height: 400px;" src="https://www.google.com/?igu=1"></iframe>
+	<!-- <iframe id="googlesearchframe" style="width: 100%; height: 400px;" src="https://www.google.com/?igu=1"></iframe> -->
 	<script type="text/javascript">
 		document.getElementById('inputbox').addEventListener("keypress", function (event) {
    			if (event.keyCode == 13) {
