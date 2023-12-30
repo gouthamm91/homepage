@@ -157,7 +157,7 @@
 
 		var recognition = new webkitSpeechRecognition();
     	recognition.onresult = function(event) {
-            transcript.value = event.results[0][0].transcript;
+            inputbox.value = event.results[0][0].transcript;
     	};
         micbtn.onclick = function() {
             recognition.start();
