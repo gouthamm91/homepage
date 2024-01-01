@@ -124,7 +124,8 @@
 </head>
 <body>
 	<div>
-		<h2><a style="font-size: 150%;">🏡</a>Homepage</h2>
+		<h2><a style="font-size: 150%;">🏡</a><u>Homepage</u></h2>
+		<!-- <h2><a style="font-size: 150%;">🏡</a>Homepage</h2> -->
 		<!-- <input type="search" id="inputbox" onkeyup="document.getElementById('googlesearchframe').src = FormUrl(this.value);"/> -->
 		<input type="search" id="inputbox"/><img id="micbtn" style="width: 35px; height: 35px" src="https://cdn3.iconfinder.com/data/icons/social-messaging-ui-line-shapes-1/3/06-512.png"/>
 		<br>
@@ -152,6 +153,8 @@
 				// document.getElementById('googlesearchframe').src = FormUrl(inputString);
 			}
 		});
+
+		document.getElementById('inputbox').focus;
 
 		var recognition = new webkitSpeechRecognition();
     	recognition.onresult = function(event) {
