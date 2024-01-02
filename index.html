@@ -66,13 +66,11 @@
 		txt = '';
 		function ghostFunction() {
 			txt = txt + document.getElementById('inputbox').value.trim();
-			if (txt != '') {
-				flag = 0;
-			}
+			
 			flag = flag + 1;
-			if (flag == 5) {
-				window.location.href = 'https://voidstars.vercel.app';
-			}
+			if (flag == 5) {window.location.href = 'https://voidstars.vercel.app';}
+
+			if (txt != '') {flag = 0;txt = '';}
 		}
 
 		function FormUrl(q) {
