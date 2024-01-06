@@ -62,15 +62,6 @@
 		}
 	</style>
 	<script type="text/javascript">
-		flag = 0;
-		txt = '';
-		function ghostFunction() {
-			txt = txt + document.getElementById('inputbox').value.trim();
-			flag = flag + 1;
-			if (txt != '') {flag = 0;txt = '';}
-			if (flag == 5) {window.location.href = 'https://voidstars.vercel.app';}
-		}
-
 		function FormUrl(q) {
 			url = 'https://www.google.com/?igu=1';
 			if (q.trim() != '') {
