@@ -165,7 +165,9 @@
 
 		var recognition = new webkitSpeechRecognition();
     	recognition.onresult = function(event) {
-            inputbox.value = event.results[0][0].transcript;
+			var txt = event.results[0][0].transcript;
+            inputbox.value = txt;
+			searchQuery(txt);
     	};
         micbtn.onclick = function() {
             recognition.start();
