@@ -80,6 +80,8 @@
 				// var videoKey = videoKey + ' video tape dvd recording trailer scene blooper ';
 				var mapKey = ' maps gps charts directions ways routes roads locations locating located driving riding ';
 				var mapKey = mapKey + ' map gp chart direction way route road location locate where traffic drive ride ';
+				var flightKey = ' flights aeroplanes airplanes planes aircrafts flying airways ';
+				var flightKey = flightKey + ' flight aeroplane airplane plane aircraft fly airway ';
 				var qLower = q.toLowerCase().trim().replace(/ of /g, ' ').replace(/ to /g, ' ').replace(/ toward /g, ' ').replace(/ towards /g, ' ');
 				var url = '';
 				for (a=0; a<qLower.split(' ').length; a++) {
@@ -95,6 +97,10 @@
 					if (mapKey.indexOf(' '+word+' ') > -1) {
 						var finalKey = word;
 						var url = 'https://www.google.com/maps?q='+q.trim().toLowerCase().replace(/ /g, '+')+'&igu=1';
+					}
+					if (flightKey.indexOf(' '+word+' ') > -1) {
+						var finalKey = word;
+						var url = 'https://www.google.com/travel/flights?q='+q.trim().toLowerCase().replace(/ /g, '+')+'&igu=1';
 					}
 				}
 
