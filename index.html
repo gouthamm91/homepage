@@ -194,10 +194,12 @@
 	const ClearBrowserHistoryUrl = browserComponents[2];
 
 	function openHistory() {
-		window.open(browserHistoryUrl, target='_blank');
+		// window.open(browserHistoryUrl, target='_blank');
+		window.location.href = browserHistoryUrl;
 	}
 	function openClearHistory() {
-		window.open(ClearBrowserHistoryUrl, target='_blank');
+		// window.open(ClearBrowserHistoryUrl, target='_blank');
+		window.location.href = ClearBrowserHistoryUrl;
 	}
 		
 		function FormUrl(q) {
