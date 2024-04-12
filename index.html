@@ -150,6 +150,55 @@
 		}
 	</style>
 	<script type="text/javascript">
+
+	function getBrowserDetails() {
+		var isChromium = window.chrome;
+		var winNav = window.navigator;
+		var vendorName = winNav.vendor;
+		var isOpera = typeof window.opr !== "undefined";
+		var isIEedge = winNav.userAgent.indexOf("Edg") > -1;
+		var isIOSChrome = winNav.userAgent.match("CriOS");
+		
+		if (isIOSChrome) {
+		   var browserName = 'ChromeIOS';
+		   var hisUrl = 'chrome://history/';
+		   var clearHisUrl = 'chrome://settings/clearBrowserData';
+		} else if(
+		  isChromium !== null &&
+		  typeof isChromium !== "undefined" &&
+		  vendorName === "Google Inc." &&
+		  isOpera === false &&
+		  isIEedge === false
+		) {
+		   var browserName = 'Chrome';
+		   var hisUrl = 'chrome://history/'; 
+		   var clearHisUrl = 'chrome://settings/clearBrowserData';
+		} else if(isIEedge) {
+		   var browserName = 'Edge';
+		   var hisUrl = 'edge://history';
+		   var clearHisUrl = 'edge://settings/clearBrowserData';
+		} else if(isOpera) { 
+		   var browserName = 'Opera';
+		   var hisUrl = 'opera://history/'; 
+		   var clearHisUrl = 'opera://settings/clearBrowserData';
+		} else if(winNav.userAgent.toLowerCase().index("mozil") > -1) {
+		   var browserName = 'Mozilla';
+		   var hisUrl = 'mozilla://history/'; 
+		   var clearHisUrl = 'mozilla://settings/clearBrowserData';
+		}
+		return [browserName, hisUrl, clearHisUrl]
+	}
+			
+	const browserComponents = getBrowserDetails();
+	const browserHistoryUrl = browserComponents[1];
+	const ClearBrowserHistoryUrl = browserComponents[2];
+
+	function openHistory() {
+		window.open(browserHistoryUrl, target='_blank');
+	}
+	function openClearHistory() {
+		window.open(ClearBrowserHistoryUrl, target='_blank');
+	}
 		
 		function FormUrl(q) {
 			url = 'https://www.google.com/?igu=1';
@@ -219,8 +268,12 @@
 </head>
 <body>
 	<div>
-		<!-- <h2><a style="font-size: 150%;">🏡</a><u>Homepage</u></h2> -->
-		<u><h2><a style="font-size: 150%;">🏡</a>Homepage</h2></u>
+		<div style="text-align: right;">
+			<img style="width: 20px; height: 20px;" src="https://static.thenounproject.com/png/3547853-200.png" onclick="openHistory()"/>
+			<img style="width: 20px; height: 20px;" src="https://static-00.iconduck.com/assets.00/delete-icon-1864x2048-bp2i0gor.png" onclick="openClearHistory()"/>
+		</div>
+		<h2><a style="font-size: 150%;">🏡</a><u>Homepage</u></h2>
+<!-- 		<u><h2><a style="font-size: 150%;">🏡</a>Homepage</h2></u> -->
 		<form style="width: 100%;" action="/">
 			<!-- <input type="search" id="inputbox" onkeyup="document.getElementById('googlesearchframe').src = FormUrl(this.value);"/> -->
 			<input type="search" id="inputbox" onclick="ghostFunction()"/><img id="micbtn" style="width: 35px; height: 35px" src="https://cdn3.iconfinder.com/data/icons/social-messaging-ui-line-shapes-1/3/06-512.png"/>
