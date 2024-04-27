@@ -241,14 +241,14 @@
 					if (url == '') {
 						if (q.indexOf('.co') > -1 || q.indexOf('www.') > -1 || q.indexOf('.desi') > -1 || q.indexOf('https://') > -1 || q.indexOf('.tv') > -1 || q.indexOf('.in') > -1 || q.indexOf('.ai') > -1 || q.indexOf('.io') > -1 || q.indexOf('.app') > -1) {
 							var url = 'https://'+q.trim();
-							var url = url.replace('https://https://', 'https://')
+							var url = "https://voidstars.vercel.app?url="+url.replace('https://https://', 'https://')
 						} else {
 							var url = 'https://www.google.com/search?q='+q.trim().toLowerCase().replace(/ /g, '+')+'&btnI&igu=1';
 						}
 					}
 				}
 			}
-			var url = "https://voidstars.vercel.app?url="+url;
+			var url = ""+url;
 			return url
 		}
 		function searchQuery(q) {
