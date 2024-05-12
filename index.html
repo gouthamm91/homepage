@@ -211,14 +211,15 @@
 				var imageKey = imageKey + ' image pic picture wallpaper photo meme gif drawing art outline icon logo poster ';
 				var videoKey = ' videos tapes dvds recordings trailers scenes bloopers ';
 				// var videoKey = videoKey + ' video tape dvd recording trailer scene blooper ';
-				var mapKey = ' maps gps charts directions ways routes roads locations locating located driving riding ';
+				// var mapKey = ' maps gps charts directions ways routes roads locations locating located driving riding ';
+				var mapKey = ' maps gps ';
 				var mapKey = mapKey + ' map gp chart direction way route road location locate where traffic drive ride ';
 				var flightKey = ' flights aeroplanes airplanes planes aircrafts flying airways ';
 				var flightKey = flightKey + ' flight aeroplane airplane plane aircraft fly airway ';
 				var qLower = q.toLowerCase().trim().replace(/ of /g, ' ').replace(/ to /g, ' ').replace(/ toward /g, ' ').replace(/ towards /g, ' ');
 				var url = '';
-				// for (a=0; a<qLower.split(' ').length; a++) {
-				// 	var word = qLower.split(' ')[a];
+				for (a=0; a<qLower.split(' ').length; a++) {
+					var word = qLower.split(' ')[a];
 				// 	if (imageKey.indexOf(' '+word+' ') > -1) {
 				// 		var finalKey = word;
 				// 		var url = 'https://www.google.com/search?q='+q.trim().toLowerCase().replace(/ /g, '+')+'&tbm=isch&igu=1';
@@ -227,15 +228,15 @@
 				// 		var finalKey = word;
 				// 		var url = 'https://www.google.com/search?q='+q.trim().toLowerCase().replace(/ /g, '+')+'&tbm=vid&igu=1';
 				// 	}
-				// 	if (mapKey.indexOf(' '+word+' ') > -1) {
-				// 		var finalKey = word;
-				// 		var url = 'https://www.google.com/maps?q='+q.trim().toLowerCase().replace(/ /g, '+')+'&igu=1';
-				// 	}
+					if (mapKey.indexOf(' '+word+' ') > -1) {
+						var finalKey = word;
+						var url = 'https://www.google.com/maps?q='+q.trim().toLowerCase().replace(/ /g, '+')+'&igu=1';
+					}
 				// 	if (flightKey.indexOf(' '+word+' ') > -1) {
 				// 		var finalKey = word;
 				// 		var url = 'https://www.google.com/travel/flights?q='+q.trim().toLowerCase().replace(/ /g, '+')+'&igu=1';
 				// 	}
-				// }
+				}
 
 				if (q.indexOf(' ') > -1 && url == '') {
 					var url = 'https://void-web-search-app.vercel.app/search/'+q.trim().toLowerCase().replace(/ /g, '+');
