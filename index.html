@@ -161,11 +161,15 @@
 		var dt = new Date();
 		var hr = dt.getHours(); var mn = dt.getMinutes(); var sc = dt.getSeconds();
 
+		var mar = 'AM';
+		if (hr > 11) {var mar = 'PM';}
+		if (hr > 12) {var hr = hr - 12;}
+
 		if (hr < 10) {var hr = '0'+hr;}
 		if (mn < 10) {var mn = '0'+mn;}
 		if (sc < 10) {var sc = '0'+sc;}
 		
-		document.getElementById('timeDisplay').innerHTML = hr + ':' + mn + ':' + sc
+		document.getElementById('timeDisplay').innerHTML = hr + ':' + mn + ':' + sc + ' ' + mar
 	}
 		
 	function getBrowserDetails() {
