@@ -153,6 +153,12 @@
 	</style>
 	<script type="text/javascript">
 
+	function updateTime() {
+		var dt = new Date();
+		var hr = dt.getHours(); var mn = dt.getMinutes(); var sc = dt.getSeconds();
+		document.getElementById('timeDisplay').innerHTML = hr + ':' + mn + ':' + sc
+	}
+		
 	function getBrowserDetails() {
 		var isChromium = window.chrome;
 		var winNav = window.navigator;
@@ -273,12 +279,13 @@
 		}
 	</script>
 </head>
-<body>
+<body onload="window.setInterval(function() {updateTime();}, 1000);">
 	<div>
 		<div style="text-align: right;">
 <!-- 			<img style="width: 20px; height: 20px;" src="https://static.thenounproject.com/png/3547853-200.png" onclick="openHistory()"/> -->
 <!-- 			<img style="width: 20px; height: 20px;" src="https://static-00.iconduck.com/assets.00/delete-icon-1864x2048-bp2i0gor.png" onclick="openClearHistory()"/> -->
 		</div>
+		<a id="timeDisplay" style="font-size: 150%;"></a><br>
 		<h2><a style="font-size: 150%;">🏡</a><u>Homepage</u></h2>
 <!-- 		<u><h2><a style="font-size: 150%;">🏡</a>Homepage</h2></u> -->
 		<form style="width: 100%;" action="/">
