@@ -267,7 +267,7 @@
 				if (q.indexOf(' ') > -1 && url == '') {
 					// var url = 'https://void-web-search-app.vercel.app/search/'+q.trim().toLowerCase().replace(/ /g, '+');
 					var url = 'https://www.google.com/search?q=show+'+q.trim().toLowerCase().replace(/ /g, '+')+'&btnI';
-					var url = "https://duckduckgo.com/?t=h_&q=ducky!+"+q.trim().replace(/ /g, "")+"&ia=web";
+					var url = "https://duckduckgo.com/?t=h_&q=%5C"+q.trim().replace(/ /g, "")+"&ia=web";
 				} else {
 					if (url == '') {
 						if (q.indexOf('.co') > -1 || q.indexOf('www.') > -1 || q.indexOf('.desi') > -1 || q.indexOf('https://') > -1 || q.indexOf('.tv') > -1 || q.indexOf('.in') > -1 || q.indexOf('.ai') > -1 || q.indexOf('.io') > -1 || q.indexOf('.app') > -1 || q.indexOf('.org') > -1 || q.indexOf('.desi') > -1 || q.indexOf('.health') > -1 || q.indexOf('.uk') > -1) {
@@ -309,8 +309,8 @@
 <!-- 			<img style="width: 20px; height: 20px;" src="https://static-00.iconduck.com/assets.00/delete-icon-1864x2048-bp2i0gor.png" onclick="openClearHistory()"/> -->
 		</div>
 		<h2><a id="timeDisplay" style="font-size: 150%;"></a></h2>
- 		<h2><a style="font-size: 150%;">🏡</a>Homepage</h2> 
-		<!-- <u><h2><a style="font-size: 150%;">🏡</a>Homepage</h2></u> -->
+ 		<!-- <h2><a style="font-size: 150%;">🏡</a>Homepage</h2> -->
+		<u><h2><a style="font-size: 150%;">🏡</a>Homepage</h2></u>
 		<form style="width: 100%;" action="/">
 			<!-- <input type="search" id="inputbox" onkeyup="document.getElementById('googlesearchframe').src = FormUrl(this.value);"/> -->
 			<button class="imgbtns" onclick="event.preventDefault(); if (document.getElementById('inputbox').value.trim() != '') {window.open('https://www.google.com/search?q='+document.getElementById('inputbox').value.replace(/ /g, '+'), target='_blank');} else {window.open('https://www.google.com', target='_blank');}"><img style="background-color: white;" src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"/></button>
