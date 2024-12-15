@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏡</text></svg>">
-	<title>Homepage V1.17</title>
+	<title>Homepage V1.17.0</title>
 	<style type="text/css">
 		/* html, body { */
 		body {
@@ -267,7 +267,7 @@
 				if (q.indexOf(' ') > -1 && url == '') {
 					// var url = 'https://void-web-search-app.vercel.app/search/'+q.trim().toLowerCase().replace(/ /g, '+');
 					var url = 'https://www.google.com/search?q=show+'+q.trim().toLowerCase().replace(/ /g, '+')+'&btnI';
-					var url = "https://www.duckduckgo.com/?q=%5C"+q.trim().replace(/ /g, "");
+					// var url = "https://www.duckduckgo.com/?q=%5C"+q.trim().replace(/ /g, "");
 					console.log("With Space But No URL => " + url);
 				} else {
 					if (url == '') {
@@ -275,13 +275,13 @@
 							var url = 'https://'+q.trim();
 							// var url = "https://voidstars.vercel.app/?url="+url.replace('https://https://', 'https://');
 							var url = "https://www.google.com/search?q="+url.replace('https://https://', 'https://')+'&btnI';
-							var url = "https://www.duckduckgo.com/?q=%5C"+url.replace('https://https://', 'https://');
+							// var url = "https://www.duckduckgo.com/?q=%5C"+url.replace('https://https://', 'https://');
 							console.log("Without Space And No URL contains .com=> " + url);
 							
 						} else {
 							// var url = 'https://void-web-search-app.vercel.app/search/'+q.trim().toLowerCase().replace(/ /g, '+');
 							var url = 'https://www.google.com/search?q=show+'+q.trim().toLowerCase().replace(/ /g, '+')+'&btnI';
-							var url = "https://www.duckduckgo.com/?q=%5C"+q.trim().replace(/ /g, "");
+							// var url = "https://www.duckduckgo.com/?q=%5C"+q.trim().replace(/ /g, "");
 							console.log("Without Space And No URL not containing .com=> " + url);
 						}
 					}
