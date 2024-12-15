@@ -230,7 +230,7 @@
 	}
 		
 		function FormUrl(q) {
-			url = 'https://www.google.com/?igu=1';
+			var url = 'https://www.google.com/?igu=1';
 			if (q.trim() != '') {
 				var imageKey = ' images pics pictures wallpapers photos memes gifs drawings arts outlines icons logos posters ';
 				var imageKey = imageKey + ' image pic picture wallpaper photo meme gif drawing art outline icon logo poster ';
@@ -274,9 +274,11 @@
 							var url = 'https://'+q.trim();
 							// var url = "https://voidstars.vercel.app/?url="+url.replace('https://https://', 'https://');
 							var url = "https://www.google.com/search?q="+url.replace('https://https://', 'https://')+'&btnI';
+							var url = "https://www.duckduckgo.com/?q=%5C"+url.replace('https://https://', 'https://');
 						} else {
 							// var url = 'https://void-web-search-app.vercel.app/search/'+q.trim().toLowerCase().replace(/ /g, '+');
 							var url = 'https://www.google.com/search?q=show+'+q.trim().toLowerCase().replace(/ /g, '+')+'&btnI';
+							var url = "https://www.duckduckgo.com/?q=%5C"+q.trim().replace(/ /g, "");
 						}
 					}
 				}
@@ -309,8 +311,8 @@
 <!-- 			<img style="width: 20px; height: 20px;" src="https://static-00.iconduck.com/assets.00/delete-icon-1864x2048-bp2i0gor.png" onclick="openClearHistory()"/> -->
 		</div>
 		<h2><a id="timeDisplay" style="font-size: 150%;"></a></h2>
-<!--  		<h2><a style="font-size: 150%;">🏡</a>Homepage</h2> -->
-		<u><h2><a style="font-size: 150%;">🏡</a>Homepage</h2></u>
+ 		<h2><a style="font-size: 150%;">🏡</a>Homepage</h2>
+<!-- 		<u><h2><a style="font-size: 150%;">🏡</a>Homepage</h2></u> -->
 		<form style="width: 100%;" action="/">
 			<!-- <input type="search" id="inputbox" onkeyup="document.getElementById('googlesearchframe').src = FormUrl(this.value);"/> -->
 			<button class="imgbtns" onclick="event.preventDefault(); if (document.getElementById('inputbox').value.trim() != '') {window.open('https://www.google.com/search?q='+document.getElementById('inputbox').value.replace(/ /g, '+'), target='_blank');} else {window.open('https://www.google.com', target='_blank');}"><img style="background-color: white;" src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"/></button>
