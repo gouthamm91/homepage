@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏡</text></svg>">
-	<title>Homepage V1.17</title>
+	<title>Homepage V1.17.0</title>
 	<style type="text/css">
 		/* html, body { */
 		body {
@@ -268,6 +268,7 @@
 					// var url = 'https://void-web-search-app.vercel.app/search/'+q.trim().toLowerCase().replace(/ /g, '+');
 					var url = 'https://www.google.com/search?q=show+'+q.trim().toLowerCase().replace(/ /g, '+')+'&btnI';
 					var url = "https://www.duckduckgo.com/?q=%5C"+q.trim().replace(/ /g, "");
+					console.log("With Space But No URL => " + url);
 				} else {
 					if (url == '') {
 						if (q.indexOf('.co') > -1 || q.indexOf('www.') > -1 || q.indexOf('.desi') > -1 || q.indexOf('https://') > -1 || q.indexOf('.tv') > -1 || q.indexOf('.in') > -1 || q.indexOf('.ai') > -1 || q.indexOf('.io') > -1 || q.indexOf('.app') > -1 || q.indexOf('.org') > -1 || q.indexOf('.desi') > -1 || q.indexOf('.health') > -1 || q.indexOf('.uk') > -1) {
@@ -275,15 +276,19 @@
 							// var url = "https://voidstars.vercel.app/?url="+url.replace('https://https://', 'https://');
 							var url = "https://www.google.com/search?q="+url.replace('https://https://', 'https://')+'&btnI';
 							var url = "https://www.duckduckgo.com/?q=%5C"+url.replace('https://https://', 'https://');
+							console.log("Without Space And No URL contains .com=> " + url);
+							
 						} else {
 							// var url = 'https://void-web-search-app.vercel.app/search/'+q.trim().toLowerCase().replace(/ /g, '+');
 							var url = 'https://www.google.com/search?q=show+'+q.trim().toLowerCase().replace(/ /g, '+')+'&btnI';
 							var url = "https://www.duckduckgo.com/?q=%5C"+q.trim().replace(/ /g, "");
+							console.log("Without Space And No URL not containing .com=> " + url);
 						}
 					}
 				}
 			}
 			var url = ""+url;
+			console.log("Form Url => " + url);
 			return url
 		}
 		function searchQuery(q) {
